@@ -1,18 +1,36 @@
 # USEFUL LINKS
-azure aks login
+Ingress related commands:
+
+# Get the resource group name of the AKS cluster 
+az aks show --resource-group istio-poc --name istio-poc --query nodeResourceGroup -o tsv
+
+# TEMPLATE - Create a public IP address with the static allocation
+az network public-ip create --resource-group MC_istio-poc_istio-poc_centralus --name myAKSPublicIPForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
+
+public ip:23.99.197.82
+
+
+
+helm install ingress-nginx ingress-nginx/ingress-nginx --namespace ingress-basic --set controller.replicaCount=2 --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux --set controller.service.externalTrafficPolicy=Local --set controller.service.loadBalancerIP="23.99.197.82"
+
+
+# REPLACE - Create Public IP: Replace Resource Group value
+az network public-ip create --resource-group MC_istio-poc_istio-poc_centralus --name myAKSPublicIPForIngress --sku Standard --allocation-method static --query publicIp.ipAddress -o tsv
+azure aks login:
 az aks get-credentials --resource-group istio-poc --name istio-poc
 
 connecting aks with acr
 https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli
 
 az aks update -n istio-poc -g istio-poc --attach-acr varasrinivas
+
 running registry locally
 docker run -d -p 5000:5000 --name registry registry:2.7
 
 To push images to azure container service
 
 az login
-az acr login --name myregistry
+az acr login --name varasrinivas
 
 # Frontend
 
