@@ -1,3 +1,19 @@
+# USEFUL LINKS
+azure aks login
+az aks get-credentials --resource-group istio-poc --name istio-poc
+
+connecting aks with acr
+https://docs.microsoft.com/en-us/azure/aks/cluster-container-registry-integration?tabs=azure-cli
+
+az aks update -n istio-poc -g istio-poc --attach-acr varasrinivas
+running registry locally
+docker run -d -p 5000:5000 --name registry registry:2.7
+
+To push images to azure container service
+
+az login
+az acr login --name myregistry
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.

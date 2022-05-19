@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  selector:
+    matchLabels:
+      run: frontend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: varasrinivas.azurecr.io/frontend:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  labels:
+    run: frontend
+spec:
+  ports:
+  - name: http
+    port: 8082
+    targetPort: 8082
+  type: LoadBalancer
+  selector:
+    run: frontend
+
+
+
