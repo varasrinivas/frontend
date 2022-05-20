@@ -18,4 +18,9 @@ export class HelloworldService {
     console.log('getDataProxyPath called ++++++++++++');
     return this.http.get('/api');
   }
+
+  getDataIngress():Observable<any>{
+    console.log('getDataIngress called ++++++++++++');
+    return this.http.get('http://23.99.197.82');
+  }
 }

@@ -6,11 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProxyPathComponent } from './proxy-path/proxy-path.component';
+import { IngressPathComponent } from './ingress-path/ingress-path.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProxyPathComponent
+    ProxyPathComponent,
+    IngressPathComponent
   ],
   imports: [
     BrowserModule,
