@@ -6,19 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  displayData = '';
-  title = 'frontend';
-
-  constructor(private service: HelloworldService){
-  }
-  
-  ngOnInit(): void {
-    this.service.getData().subscribe(data => {
-      this.displayData = JSON.stringify(data);
-    })
-  }
-
-  
+export class AppComponent {
 }
 

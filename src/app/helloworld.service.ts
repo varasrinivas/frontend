@@ -11,7 +11,7 @@ export class HelloworldService {
 
   getData():Observable<any>{
     console.log('getData called ++++++++++++');
-    return this.http.get('http://backend-service.default.svc.cluster.local:3000');
+    return this.http.get('http://backend-service.default.svc.cluster.local');
   }
 
   getDataProxyPath():Observable<any>{
@@ -21,6 +21,8 @@ export class HelloworldService {
 
   getDataIngress():Observable<any>{
     console.log('getDataIngress called ++++++++++++');
+    this.http.get('https://dummyjson.com/products/1');
+    
     return this.http.get('http://23.99.197.82');
   }
 }

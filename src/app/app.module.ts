@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProxyPathComponent } from './proxy-path/proxy-path.component';
 import { IngressPathComponent } from './ingress-path/ingress-path.component';
+import { DirectCallComponent } from './direct-call/direct-call.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProxyPathComponent,
-    IngressPathComponent
+    IngressPathComponent,
+    DirectCallComponent
   ],
   imports: [
     BrowserModule,

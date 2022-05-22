@@ -1,4 +1,6 @@
 # USEFUL LINKS
+
+https://stackoverflow.com/questions/45724320/kubernetes-access-back-end-api-from-angular
 Ingress related commands:
 
 # Get the resource group name of the AKS cluster 
